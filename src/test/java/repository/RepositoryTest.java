@@ -89,4 +89,24 @@ class RepositoryTest {
         assertArrayEquals(actual, expected);
 
     }
+
+    @Test
+    @Description("Поиск билетов по аэропорту from and to и сортировка по цене другой вариант ")
+    void Case5() {
+
+        manager.addTicket(ticket1);
+        manager.addTicket(ticket2);
+        manager.addTicket(ticket3);
+        manager.addTicket(ticket4);
+        manager.addTicket(ticket5);
+        manager.addTicket(ticket6);
+
+
+        Ticket[] actual = manager.findAllTicketsBetween("LAS", "MGZ");
+
+        Ticket[] expected = {ticket2};
+
+        assertArrayEquals(actual, expected);
+
+    }
 }
